@@ -1,0 +1,14 @@
+resources:
+  - ./docker-demo-namespace.yaml
+  - ./base/docker-demo-deployment.yaml
+  - ./base/docker-demo-service.yaml
+  - ./base/docker-demo-ingress.yaml
+
+commonLabels:
+  name: docker-demo
+  app: docker-demo
+  managedBy: kustomize
+  env: dev
+  release: 1.0.0
+
+# Path: k8s/apps/hello-world/overlays/prod/kustomization.yaml
