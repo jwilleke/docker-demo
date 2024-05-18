@@ -10,5 +10,3 @@ commonLabels:
   managedBy: kustomize
   env: dev
   release: 1.0.0
-
-

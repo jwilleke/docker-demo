@@ -6,13 +6,13 @@ metadata:
     traefik.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: "nerdsbythehour.com"
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: docker-demo
-            port:
-              number: 80
+    - host: "nerdsbythehour.com"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: docker-demo
+                port:
+                  number: 80
