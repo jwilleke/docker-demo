@@ -104,3 +104,4 @@ touch docker-demo-namespace.yaml
 touch kustomization.yaml
 ```
 
+local-dockerdemo.tar
