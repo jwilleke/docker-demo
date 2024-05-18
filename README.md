@@ -63,32 +63,58 @@ confirm docker install
 
 To build your container, make sure you're in the folder where you have your Dockerfile and run the following command in the terminal:
 
-docker build -t sampleapp:v1 .
+``` bash
+docker build -t dockerdemo:v1 .
+```
+
 This command initiates the Docker build process to create a Docker image based on the instructions specified in the Dockerfile located in the current directory (.)
 
 The -t flag specifies a tag for the image, allowing you to assign a name and version to it. In this case, the image will be tagged as "sampleapp" with the version "v1" providing a descriptive identifier for the image, making it easier to reference and manage.
 
 You should see the build process start and an output indicating that it has finished when it is done.
 
-docker build
-
 ## Step 6 - Verify the built Docker image
 
 After a successful build, verify the image by running the docker images command to list all the available images on your Docker host. You should see your newly created image listed with its assigned tag and other relevant details, ready to be used for running containers or pushing to a container registry for distribution.
+
+``` bash
+docker images
+```
 
 ## Step 7 - Run the Docker image
 
 Next, run the Docker image as a container using:
 
 ``` bash
-docker run -p 8080:80 sampleapp:v1
+docker run -p 9991:80 sampleapp:v1
 ```
 
 This command tells Docker to run the sampleapp container. The -p flag specifies the port mapping, which maps a port from the host machine to a port inside the container. Here, you are mapping port 8080 of the host machine to port 80 of the container. You can modify the host port as per your preference. Ensure you specify the image name and version you used when building the image.
 
 ## Step 8 - Access the application
 
-With the container running, you can go ahead to access the application. Open a web browser and navigate to <http://localhost:8080> and you should see the sample web page displayed on your web browser.
+With the container running, you can go ahead to access the application. Open a web browser and navigate to <http://localhost:9991> and you should see the sample web page displayed on your web browser.
+
+## Push dockerdemo image to Registry
+
+Tag the image
+
+``` bash
+docker tag dockerdemo aug12018/dockerdemo:latest
+```
+
+Push the image to Docker Hub
+Where:
+
+- aug12018 is the user name for Docker Hub
+- latest is the tag which is the build
+
+``` bash
+docker login
+docker push aug12018/dockerdemo:latest
+```
+
+> Note: "aug12018/dockerdemo:latest" is used in [docker-demo-deployment.yaml](./base/docker-demo-deployment.yaml) file.
 
 ## Kubernetties Deployment
 
@@ -104,4 +130,7 @@ touch docker-demo-namespace.yaml
 touch kustomization.yaml
 ```
 
-local-dockerdemo.tar
+And refer to the github repository to get file contents.
+
+
+

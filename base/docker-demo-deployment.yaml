@@ -13,7 +13,14 @@ spec:
         app: docker-demo
     spec:
       containers:
-      - name: docker-demo
-        image: docker-demo:latest
-        ports:
-        - containerPort: 8080
+        - name: docker-demo
+          image: aug12018/dockerdemo:latest
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 64Mi

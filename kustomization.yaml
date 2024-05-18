@@ -11,4 +11,4 @@ commonLabels:
   env: dev
   release: 1.0.0
 
-# Path: k8s/apps/hello-world/overlays/prod/kustomization.yaml
+
