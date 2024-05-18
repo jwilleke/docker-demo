@@ -72,10 +72,9 @@ You should see the build process start and an output indicating that it has fini
 
 docker build
 
-#Step 6 - Verify the built Docker image
-After a successful build, verify the image by running the docker images command to list all the available images on your Docker host. You should see your newly created image listed with its assigned tag and other relevant details, ready to be used for running containers or pushing to a container registry for distribution.
+## Step 6 - Verify the built Docker image
 
-verify built image
+After a successful build, verify the image by running the docker images command to list all the available images on your Docker host. You should see your newly created image listed with its assigned tag and other relevant details, ready to be used for running containers or pushing to a container registry for distribution.
 
 ## Step 7 - Run the Docker image
 
@@ -92,4 +91,16 @@ This command tells Docker to run the sampleapp container. The -p flag specifies 
 With the container running, you can go ahead to access the application. Open a web browser and navigate to <http://localhost:8080> and you should see the sample web page displayed on your web browser.
 
 ## Kubernetties Deployment
+
+If you did not clone the repository create the following:
+
+``` bash
+mkdir base
+cd base
+touch docker-demo-deployment.yaml
+touch docker-demo-ingress.yaml
+cd ..
+touch docker-demo-namespace.yaml
+touch kustomization.yaml
+```
 
