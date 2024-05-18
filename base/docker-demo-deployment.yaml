@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: docker-demo
+  name: docker-demo-service
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: docker-demo
@@ -16,7 +16,7 @@ spec:
         - name: docker-demo
           image: aug12018/dockerdemo:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 80 # This refers to the port number on which the application inside the container listens for traffic. 
           resources:
             limits:
               cpu: 100m

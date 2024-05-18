@@ -86,7 +86,7 @@ docker images
 Next, run the Docker image as a container using:
 
 ``` bash
-docker run -p 9991:80 sampleapp:v1
+docker run -p 9991:80 aug12018/dockerdemo:latest
 ```
 
 This command tells Docker to run the sampleapp container. The -p flag specifies the port mapping, which maps a port from the host machine to a port inside the container. Here, you are mapping port 8080 of the host machine to port 80 of the container. You can modify the host port as per your preference. Ensure you specify the image name and version you used when building the image.
@@ -131,6 +131,3 @@ touch kustomization.yaml
 ```
 
 And refer to the github repository to get file contents.
-
-
-
