@@ -131,3 +131,11 @@ touch kustomization.yaml
 ```
 
 And refer to the github repository to get file contents.
+
+## 21-Apps
+
+[21-Apps docker-demo](https://github.com/jwilleke/21-apps/tree/master/k8s/apps/docker-demo)
+
+``` bash
+cp -r kustomize/ /Volumes/docs/jim/data/systems/tower/apps/21-apps/k8s/apps/docker-demo/
+```
